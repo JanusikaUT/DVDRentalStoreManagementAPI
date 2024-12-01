@@ -1,0 +1,6 @@
+@DVD_RENTAL_API_HostAddress = http://localhost:5062
+
+GET {{DVD_RENTAL_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

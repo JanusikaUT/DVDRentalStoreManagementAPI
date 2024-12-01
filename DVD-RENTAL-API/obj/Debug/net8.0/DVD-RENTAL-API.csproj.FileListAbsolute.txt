@@ -170,3 +170,4 @@ D:\AAAA\DVD-RENTAL-API\DVD-RENTAL-API\bin\Debug\net8.0\AutoMapper.dll
 D:\AAAA\DVD-RENTAL-API\DVD-RENTAL-API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\AAAA\DVD-RENTAL-API\DVD-RENTAL-API\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\AAAA\DVD-RENTAL-API\DVD-RENTAL-API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\AAAA\DVD-RENTAL-API\DVD-RENTAL-API\obj\Debug\net8.0\DVD-RENTAL-API.sourcelink.json

@@ -53,8 +53,12 @@ namespace DVD_RENTAL_API
             // Dependency Injection for Repositories and Services
             builder.Services.AddScoped<IDVDRepository, DVDRepository>();
             builder.Services.AddScoped<IDVDService, DVDService>();
+            
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IAuthService, AuthService>();
+
+            builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
 
             var app = builder.Build();
 

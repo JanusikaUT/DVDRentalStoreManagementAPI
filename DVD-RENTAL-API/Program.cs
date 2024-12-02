@@ -1,3 +1,5 @@
+using DVD_Rental_API.Repositories;
+using DVD_Rental_API.Services;
 using DVD_RENTAL_API.Data;
 using DVD_RENTAL_API.Repositories;
 using DVD_RENTAL_API.Services;
@@ -59,6 +61,10 @@ namespace DVD_RENTAL_API
 
             builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
             builder.Services.AddScoped<ICustomerService, CustomerService>();
+
+            builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+            builder.Services.AddScoped<INotificationService, NotificationService>();
+
 
             var app = builder.Build();
 

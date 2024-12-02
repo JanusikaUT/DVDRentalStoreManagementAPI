@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DVD-RENTAL-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a94349d28a24978ec6755c7d06c3e1877754c8aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4efecdb2b52fe8703c8ad7c3b5c366251b819232")]
 [assembly: System.Reflection.AssemblyProductAttribute("DVD-RENTAL-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DVD-RENTAL-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

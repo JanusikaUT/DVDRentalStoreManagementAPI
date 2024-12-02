@@ -41,7 +41,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DVD_RENTAL_API.DTOs.CustomerDto, DVD-RENTAL-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DVD_RENTAL_API.Models.Customer, DVD-RENTAL-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -60,8 +60,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "createCustomerDto",
-        "Type": "DVD_RENTAL_API.DTOs.CreateCustomerDto",
+        "Name": "customer",
+        "Type": "DVD_RENTAL_API.Models.Customer",
         "IsRequired": true
       }
     ],
@@ -83,7 +83,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DVD_RENTAL_API.DTOs.CustomerDto",
+        "Type": "DVD_RENTAL_API.Models.Customer",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -107,8 +107,8 @@
         "IsRequired": true
       },
       {
-        "Name": "updateCustomerDto",
-        "Type": "DVD_RENTAL_API.DTOs.CreateCustomerDto",
+        "Name": "updatedCustomer",
+        "Type": "DVD_RENTAL_API.Models.Customer",
         "IsRequired": true
       }
     ],

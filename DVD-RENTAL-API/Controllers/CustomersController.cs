@@ -1,5 +1,4 @@
-﻿using DVD_RENTAL_API.DTOs;
-using DVD_RENTAL_API.Models;
+﻿using DVD_RENTAL_API.Models;
 using DVD_RENTAL_API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +8,7 @@ namespace DVD_RENTAL_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Manager")] // Only Managers can perform CRUD operations
+    [Authorize(Roles = "Manager")]
     public class CustomersController : ControllerBase
     {
         private readonly ICustomerService _customerService;
@@ -19,57 +18,58 @@ namespace DVD_RENTAL_API.Controllers
             _customerService = customerService;
         }
 
+        // Get all customers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CustomerDto>>> GetAllCustomers()
+        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
             var customers = await _customerService.GetAllCustomersAsync();
             return Ok(customers);
         }
 
+        // Get customer by ID
         [HttpGet("{id}")]
-        public async Task<ActionResult<CustomerDto>> GetCustomerById(int id)
+        public async Task<ActionResult<Customer>> GetCustomerById(int id)
         {
             var customer = await _customerService.GetCustomerByIdAsync(id);
-            if (customer == null) return NotFound();
+            if (customer == null) return NotFound("Customer not found.");
             return Ok(customer);
         }
 
+        // Add a new customer
         [HttpPost]
-        public async Task<ActionResult> AddCustomer([FromBody] CreateCustomerDto createCustomerDto)
+        public async Task<ActionResult> AddCustomer([FromBody] Customer customer)
         {
-            var customer = new Customer
-            {
-                Name = createCustomerDto.Name,
-                Email = createCustomerDto.Email,
-                NIC = createCustomerDto.NIC,
-                Phone = createCustomerDto.Phone,
-                Address = createCustomerDto.Address
-            };
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
             await _customerService.AddCustomerAsync(customer);
             return CreatedAtAction(nameof(GetCustomerById), new { id = customer.CustomerId }, customer);
         }
 
+        // Update an existing customer
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCustomer(int id, [FromBody] CreateCustomerDto updateCustomerDto)
+        public async Task<ActionResult> UpdateCustomer(int id, [FromBody] Customer updatedCustomer)
         {
-            var existingCustomer = await _customerService.GetCustomerByIdAsync(id);
-            if (existingCustomer == null) return NotFound();
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            existingCustomer.Name = updateCustomerDto.Name;
-            existingCustomer.Email = updateCustomerDto.Email;
-            existingCustomer.NIC = updateCustomerDto.NIC;
-            existingCustomer.Phone = updateCustomerDto.Phone;
-            existingCustomer.Address = updateCustomerDto.Address;
+            var existingCustomer = await _customerService.GetCustomerByIdAsync(id);
+            if (existingCustomer == null) return NotFound("Customer not found.");
+
+            existingCustomer.Name = updatedCustomer.Name;
+            existingCustomer.Email = updatedCustomer.Email;
+            existingCustomer.NIC = updatedCustomer.NIC;
+            existingCustomer.Phone = updatedCustomer.Phone;
+            existingCustomer.Address = updatedCustomer.Address;
 
             await _customerService.UpdateCustomerAsync(existingCustomer);
             return NoContent();
         }
 
+        // Delete a customer
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteCustomer(int id)
         {
             var customer = await _customerService.GetCustomerByIdAsync(id);
-            if (customer == null) return NotFound();
+            if (customer == null) return NotFound("Customer not found.");
 
             await _customerService.DeleteCustomerAsync(id);
             return NoContent();

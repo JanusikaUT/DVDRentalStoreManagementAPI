@@ -16,20 +16,34 @@ namespace DVD_RENTAL_API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Add services to the container
+            ConfigureServices(builder);
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline
+            ConfigureMiddleware(app);
+
+            app.Run();
+        }
+
+        private static void ConfigureServices(WebApplicationBuilder builder)
+        {
+            // Enable CORS
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin", policyBuilder =>
                 {
-                    policyBuilder.WithOrigins("http://localhost:51896") // Allow your Angular app's URL
-                                 .AllowAnyMethod() // Allow GET, POST, PUT, DELETE, etc.
-                                 .AllowAnyHeader(); // Allow all headers
+                    policyBuilder.WithOrigins("http://localhost:51896") // Update with your Angular app's URL
+                                 .AllowAnyMethod()
+                                 .AllowAnyHeader();
                 });
             });
 
+            // Add controllers
             builder.Services.AddControllers();
 
-            // JWT Authentication
+            // Configure JWT Authentication
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -44,7 +58,7 @@ namespace DVD_RENTAL_API
                     };
                 });
 
-            // Configure Swagger/OpenAPI
+            // Add Swagger/OpenAPI support
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -55,7 +69,7 @@ namespace DVD_RENTAL_API
             // Dependency Injection for Repositories and Services
             builder.Services.AddScoped<IDVDRepository, DVDRepository>();
             builder.Services.AddScoped<IDVDService, DVDService>();
-            
+
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IAuthService, AuthService>();
 
@@ -64,11 +78,11 @@ namespace DVD_RENTAL_API
 
             builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
             builder.Services.AddScoped<INotificationService, NotificationService>();
+        }
 
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
+        private static void ConfigureMiddleware(WebApplication app)
+        {
+            // Enable Developer Exception Page and Swagger for development
             if (app.Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -76,17 +90,18 @@ namespace DVD_RENTAL_API
                 app.UseSwaggerUI();
             }
 
+            // Enable HTTPS redirection
             app.UseHttpsRedirection();
 
             // Enable CORS
             app.UseCors("AllowSpecificOrigin");
 
+            // Enable Authentication and Authorization
             app.UseAuthentication();
             app.UseAuthorization();
 
+            // Map controllers
             app.MapControllers();
-
-            app.Run();
         }
     }
 }

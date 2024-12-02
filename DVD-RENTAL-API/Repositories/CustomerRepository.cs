@@ -1,6 +1,8 @@
 ﻿using DVD_RENTAL_API.Data;
 using DVD_RENTAL_API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DVD_RENTAL_API.Repositories
 {
@@ -12,31 +14,35 @@ namespace DVD_RENTAL_API.Repositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
+
+        public async Task<IEnumerable<Customer>> GetAllAsync()
         {
             return await _context.Customers.ToListAsync();
         }
 
-        public async Task<Customer> GetCustomerByIdAsync(int id)
+        public async Task<Customer> GetByIdAsync(int id)
         {
-            return await _context.Customers.FindAsync(id);
+            var customer = await _context.Customers.FindAsync(id);
+            if (customer == null)
+                throw new KeyNotFoundException($"Customer with ID {id} not found.");
+            return customer;
         }
 
-        public async Task AddCustomerAsync(Customer customer)
+        public async Task AddAsync(Customer customer)
         {
             await _context.Customers.AddAsync(customer);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateCustomerAsync(Customer customer)
+        public async Task UpdateAsync(Customer customer)
         {
             _context.Customers.Update(customer);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteCustomerAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            var customer = await GetCustomerByIdAsync(id);
+            var customer = await GetByIdAsync(id);
             if (customer != null)
             {
                 _context.Customers.Remove(customer);
@@ -45,4 +51,3 @@ namespace DVD_RENTAL_API.Repositories
         }
     }
 }
-

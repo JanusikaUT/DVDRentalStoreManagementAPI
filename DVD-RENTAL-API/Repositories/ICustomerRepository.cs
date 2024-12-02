@@ -4,10 +4,10 @@ namespace DVD_RENTAL_API.Repositories
 {
     public interface ICustomerRepository
     {
-        Task<IEnumerable<Customer>> GetAllCustomersAsync();
-        Task<Customer> GetCustomerByIdAsync(int id);
-        Task AddCustomerAsync(Customer customer);
-        Task UpdateCustomerAsync(Customer customer);
-        Task DeleteCustomerAsync(int id);
+        Task<IEnumerable<Customer>> GetAllAsync();
+        Task<Customer> GetByIdAsync(int id);
+        Task AddAsync(Customer customer);
+        Task UpdateAsync(Customer customer);
+        Task DeleteAsync(int id);
     }
 }

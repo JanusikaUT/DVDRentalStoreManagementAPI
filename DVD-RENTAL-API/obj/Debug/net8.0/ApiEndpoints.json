@@ -33,7 +33,7 @@
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.CustomersController",
-    "Method": "GetAllCustomers",
+    "Method": "GetAll",
     "RelativePath": "api/Customers",
     "HttpMethod": "GET",
     "IsController": true,
@@ -41,7 +41,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DVD_RENTAL_API.Models.Customer, DVD-RENTAL-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DVD_RENTAL_API.DTOs.CustomerDto, DVD-RENTAL-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -53,15 +53,15 @@
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.CustomersController",
-    "Method": "AddCustomer",
+    "Method": "Create",
     "RelativePath": "api/Customers",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "customer",
-        "Type": "DVD_RENTAL_API.Models.Customer",
+        "Name": "dto",
+        "Type": "DVD_RENTAL_API.DTOs.CreateCustomerDto",
         "IsRequired": true
       }
     ],
@@ -69,7 +69,7 @@
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.CustomersController",
-    "Method": "GetCustomerById",
+    "Method": "GetById",
     "RelativePath": "api/Customers/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -83,7 +83,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DVD_RENTAL_API.Models.Customer",
+        "Type": "DVD_RENTAL_API.DTOs.CustomerDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -95,7 +95,7 @@
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.CustomersController",
-    "Method": "UpdateCustomer",
+    "Method": "Update",
     "RelativePath": "api/Customers/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -107,8 +107,8 @@
         "IsRequired": true
       },
       {
-        "Name": "updatedCustomer",
-        "Type": "DVD_RENTAL_API.Models.Customer",
+        "Name": "dto",
+        "Type": "DVD_RENTAL_API.DTOs.UpdateCustomerDto",
         "IsRequired": true
       }
     ],
@@ -116,7 +116,7 @@
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.CustomersController",
-    "Method": "DeleteCustomer",
+    "Method": "Delete",
     "RelativePath": "api/Customers/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,

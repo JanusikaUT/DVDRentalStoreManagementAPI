@@ -1,8 +1,9 @@
-﻿using DVD_RENTAL_API.Models;
+﻿using DVD_RENTAL_API.DTOs;
 using DVD_RENTAL_API.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DVD_RENTAL_API.Controllers
 {
@@ -11,69 +12,65 @@ namespace DVD_RENTAL_API.Controllers
     [Authorize(Roles = "Manager")]
     public class CustomersController : ControllerBase
     {
-        private readonly ICustomerService _customerService;
+        private readonly ICustomerService _service;
 
-        public CustomersController(ICustomerService customerService)
+        public CustomersController(ICustomerService service)
         {
-            _customerService = customerService;
+            _service = service;
         }
 
-        // Get all customers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
+        public async Task<ActionResult<IEnumerable<CustomerDto>>> GetAll()
         {
-            var customers = await _customerService.GetAllCustomersAsync();
-            return Ok(customers);
+            return Ok(await _service.GetAllAsync());
         }
 
-        // Get customer by ID
         [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomerById(int id)
+        public async Task<ActionResult<CustomerDto>> GetById(int id)
         {
-            var customer = await _customerService.GetCustomerByIdAsync(id);
-            if (customer == null) return NotFound("Customer not found.");
-            return Ok(customer);
+            try
+            {
+                return Ok(await _service.GetByIdAsync(id));
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
 
-        // Add a new customer
         [HttpPost]
-        public async Task<ActionResult> AddCustomer([FromBody] Customer customer)
+        public async Task<ActionResult> Create([FromBody] CreateCustomerDto dto)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            await _customerService.AddCustomerAsync(customer);
-            return CreatedAtAction(nameof(GetCustomerById), new { id = customer.Id }, customer);
+            await _service.AddAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = dto.NIC }, dto);
         }
 
-        // Update an existing customer
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCustomer(int id, [FromBody] Customer updatedCustomer)
+        public async Task<ActionResult> Update(int id, [FromBody] UpdateCustomerDto dto)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var existingCustomer = await _customerService.GetCustomerByIdAsync(id);
-            if (existingCustomer == null) return NotFound("Customer not found.");
-
-            existingCustomer.Name = updatedCustomer.Name;
-            existingCustomer.Email = updatedCustomer.Email;
-            existingCustomer.NIC = updatedCustomer.NIC;
-            existingCustomer.Phone = updatedCustomer.Phone;
-            existingCustomer.Address = updatedCustomer.Address;
-
-            await _customerService.UpdateCustomerAsync(existingCustomer);
-            return NoContent();
+            try
+            {
+                await _service.UpdateAsync(id, dto);
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
 
-        // Delete a customer
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteCustomer(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var customer = await _customerService.GetCustomerByIdAsync(id);
-            if (customer == null) return NotFound("Customer not found.");
-
-            await _customerService.DeleteCustomerAsync(id);
-            return NoContent();
+            try
+            {
+                await _service.DeleteAsync(id);
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
     }
 }
-

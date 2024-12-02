@@ -5,7 +5,7 @@ namespace DVD_RENTAL_API.Models
     public class Customer
     {
         [Key]
-        public int CustomerId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -16,14 +16,15 @@ namespace DVD_RENTAL_API.Models
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(12)]
         public string NIC { get; set; } // Unique Identifier for Customer
 
-        [MaxLength(15)]
+        [MaxLength(10)]
         public string Phone { get; set; }
 
         [MaxLength(250)]
         public string Address { get; set; }
+        public ICollection<Rental> Rentals { get; set; } // Navigation property
     }
 }
 

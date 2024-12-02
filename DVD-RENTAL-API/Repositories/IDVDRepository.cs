@@ -9,5 +9,6 @@ namespace DVD_RENTAL_API.Repositories
         Task AddAsync(DVD dvd);
         Task UpdateAsync(DVD dvd);
         Task DeleteAsync(int id);
+
     }
 }

@@ -1,12 +1,15 @@
-﻿using DVD_RENTAL_API.Models;
+﻿using DVD_RENTAL_API.DTOs;
 using DVD_RENTAL_API.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DVD_RENTAL_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Manager")]
     public class DVDsController : ControllerBase
     {
         private readonly IDVDService _service;
@@ -17,61 +20,57 @@ namespace DVD_RENTAL_API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<IEnumerable<DvdDto>>> GetAll()
         {
-            var dvds = await _service.GetAllAsync();
-            return Ok(dvds);
+            return Ok(await _service.GetAllAsync());
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<ActionResult<DvdDto>> GetById(int id)
         {
             try
             {
-                var dvd = await _service.GetByIdAsync(id);
-                return Ok(dvd);
+                return Ok(await _service.GetByIdAsync(id));
             }
-            catch (KeyNotFoundException)
+            catch (KeyNotFoundException ex)
             {
-                return NotFound(new { message = "DVD not found" });
+                return NotFound(new { message = ex.Message });
             }
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(DVD dvd)
+        public async Task<ActionResult> Create([FromBody] CreateDvdDto dto)
         {
-            await _service.AddAsync(dvd);
-            return CreatedAtAction(nameof(GetById), new { id = dvd.Id }, dvd);
+            await _service.AddAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = dto.Title }, dto);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, DVD dvd)
+        public async Task<ActionResult> Update(int id, [FromBody] UpdateDvdDto dto)
         {
             try
             {
-                await _service.UpdateAsync(id, dvd);
+                await _service.UpdateAsync(id, dto);
                 return NoContent();
             }
-            catch (KeyNotFoundException)
+            catch (KeyNotFoundException ex)
             {
-                return NotFound(new { message = "DVD not found" });
+                return NotFound(new { message = ex.Message });
             }
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             try
             {
                 await _service.DeleteAsync(id);
                 return NoContent();
             }
-            catch (KeyNotFoundException)
+            catch (KeyNotFoundException ex)
             {
-                return NotFound(new { message = "DVD not found" });
+                return NotFound(new { message = ex.Message });
             }
         }
     }
-
 }
-

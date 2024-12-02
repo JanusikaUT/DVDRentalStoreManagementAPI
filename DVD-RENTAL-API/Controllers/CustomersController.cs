@@ -42,7 +42,7 @@ namespace DVD_RENTAL_API.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             await _customerService.AddCustomerAsync(customer);
-            return CreatedAtAction(nameof(GetCustomerById), new { id = customer.CustomerId }, customer);
+            return CreatedAtAction(nameof(GetCustomerById), new { id = customer.Id }, customer);
         }
 
         // Update an existing customer

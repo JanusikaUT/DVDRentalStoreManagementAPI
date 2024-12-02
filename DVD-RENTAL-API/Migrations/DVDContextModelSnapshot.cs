@@ -24,11 +24,11 @@ namespace DVD_RENTAL_API.Migrations
 
             modelBuilder.Entity("DVD_RENTAL_API.Models.Customer", b =>
                 {
-                    b.Property<int>("CustomerId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -42,8 +42,8 @@ namespace DVD_RENTAL_API.Migrations
 
                     b.Property<string>("NIC")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -52,10 +52,10 @@ namespace DVD_RENTAL_API.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
-                    b.HasKey("CustomerId");
+                    b.HasKey("Id");
 
                     b.ToTable("Customers");
                 });
@@ -89,6 +89,38 @@ namespace DVD_RENTAL_API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DVDs");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Rental", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DVDId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsOverdue")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("RentalDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ReturnDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("DVDId");
+
+                    b.ToTable("Rentals");
                 });
 
             modelBuilder.Entity("DVD_RENTAL_API.Models.User", b =>
@@ -125,6 +157,35 @@ namespace DVD_RENTAL_API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Rental", b =>
+                {
+                    b.HasOne("DVD_RENTAL_API.Models.Customer", "Customer")
+                        .WithMany("Rentals")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DVD_RENTAL_API.Models.DVD", "DVD")
+                        .WithMany("Rentals")
+                        .HasForeignKey("DVDId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("DVD");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Customer", b =>
+                {
+                    b.Navigation("Rentals");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.DVD", b =>
+                {
+                    b.Navigation("Rentals");
                 });
 #pragma warning restore 612, 618
         }

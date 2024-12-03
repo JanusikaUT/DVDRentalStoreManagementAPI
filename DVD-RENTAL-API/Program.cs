@@ -32,13 +32,14 @@ namespace DVD_RENTAL_API
             // Enable CORS
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowSpecificOrigin", policyBuilder =>
+                options.AddPolicy("AllowAllOrigins", policyBuilder =>
                 {
-                    policyBuilder.WithOrigins("http://localhost:51896") // Update with your Angular app's URL
-                                 .AllowAnyMethod()
-                                 .AllowAnyHeader();
+                    policyBuilder.AllowAnyOrigin() 
+                                 .AllowAnyMethod() 
+                                 .AllowAnyHeader(); 
                 });
             });
+
 
             // Add controllers
             builder.Services.AddControllers();
@@ -94,7 +95,7 @@ namespace DVD_RENTAL_API
             app.UseHttpsRedirection();
 
             // Enable CORS
-            app.UseCors("AllowSpecificOrigin");
+            app.UseCors("AllowAllOrigins");
 
             // Enable Authentication and Authorization
             app.UseAuthentication();

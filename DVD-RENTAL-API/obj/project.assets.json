@@ -7005,19 +7005,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vithu\\.nuget\\packages\\": {}
+    "C:\\Users\\UT01492\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AAAA\\DVD-RENTAL-API\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
+      "projectUniqueName": "X:\\UT01492\\PROJECT-03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
       "projectName": "DVD-RENTAL-API",
-      "projectPath": "D:\\AAAA\\DVD-RENTAL-API\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
-      "packagesPath": "C:\\Users\\Vithu\\.nuget\\packages\\",
-      "outputPath": "D:\\AAAA\\DVD-RENTAL-API\\DVD-RENTAL-API\\obj\\",
+      "projectPath": "X:\\UT01492\\PROJECT-03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
+      "packagesPath": "C:\\Users\\UT01492\\.nuget\\packages\\",
+      "outputPath": "X:\\UT01492\\PROJECT-03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Vithu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\UT01492\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7098,15 +7098,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[8.0.8, 8.0.8]"
+            "version": "[8.0.5, 8.0.5]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[8.0.8, 8.0.8]"
+            "version": "[8.0.5, 8.0.5]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[8.0.8, 8.0.8]"
+            "version": "[8.0.5, 8.0.5]"
           }
         ],
         "frameworkReferences": {
@@ -7117,7 +7117,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

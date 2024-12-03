@@ -9,7 +9,7 @@ namespace DVD_RENTAL_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Manager")]
+
     public class DVDsController : ControllerBase
     {
         private readonly IDVDService _service;
@@ -22,7 +22,16 @@ namespace DVD_RENTAL_API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DvdDto>>> GetAll()
         {
-            return Ok(await _service.GetAllAsync());
+            try
+            {
+                var data = await _service.GetAllAsync();
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+         
         }
 
         [HttpGet("{id}")]

@@ -9,7 +9,7 @@ namespace DVD_RENTAL_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Manager,Customer")]
+    //[Authorize(Roles = "Manager,Customer")]
     public class RentalsController : ControllerBase
     {
         private readonly IRentalService _service;

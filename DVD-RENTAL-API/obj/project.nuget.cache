@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Eqo4DUDjVG4=",
+  "dgSpecHash": "RqMfJZtUl4A=",
   "success": true,
-  "projectFilePath": "X:\\UT01492\\PROJECT-03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
+  "projectFilePath": "X:\\JanuMS_03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\UT01492\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\UT01492\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

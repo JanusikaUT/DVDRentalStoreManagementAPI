@@ -7010,11 +7010,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\UT01492\\PROJECT-03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
+      "projectUniqueName": "X:\\JanuMS_03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
       "projectName": "DVD-RENTAL-API",
-      "projectPath": "X:\\UT01492\\PROJECT-03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
+      "projectPath": "X:\\JanuMS_03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
       "packagesPath": "C:\\Users\\UT01492\\.nuget\\packages\\",
-      "outputPath": "X:\\UT01492\\PROJECT-03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\obj\\",
+      "outputPath": "X:\\JanuMS_03\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\UT01492\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DVD_RENTAL_API.Migrations
 {
     [DbContext(typeof(DVDContext))]
-    [Migration("20241202150248_dvd")]
-    partial class dvd
+    [Migration("20241211090311_change")]
+    partial class change
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,11 @@ namespace DVD_RENTAL_API.Migrations
 
             modelBuilder.Entity("DVD_RENTAL_API.Models.Customer", b =>
                 {
-                    b.Property<int>("CustomerId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -58,7 +58,7 @@ namespace DVD_RENTAL_API.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.HasKey("CustomerId");
+                    b.HasKey("Id");
 
                     b.ToTable("Customers");
                 });
@@ -71,27 +71,55 @@ namespace DVD_RENTAL_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AvailableCopies")
+                    b.Property<int>("CopiesAvailable")
                         .HasColumnType("int");
 
                     b.Property<string>("Director")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Genre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("DVDs");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Notification", b =>
+                {
+                    b.Property<int>("NotificationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NotificationId"));
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RentalId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("NotificationId");
+
+                    b.HasIndex("RentalId");
+
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("DVD_RENTAL_API.Models.Rental", b =>
@@ -117,7 +145,15 @@ namespace DVD_RENTAL_API.Migrations
                     b.Property<DateTime?>("ReturnDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("DVDId");
 
                     b.ToTable("Rentals");
                 });
@@ -156,6 +192,46 @@ namespace DVD_RENTAL_API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Notification", b =>
+                {
+                    b.HasOne("DVD_RENTAL_API.Models.Rental", "Rental")
+                        .WithMany()
+                        .HasForeignKey("RentalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Rental");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Rental", b =>
+                {
+                    b.HasOne("DVD_RENTAL_API.Models.Customer", "Customer")
+                        .WithMany("Rentals")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DVD_RENTAL_API.Models.DVD", "DVD")
+                        .WithMany("Rentals")
+                        .HasForeignKey("DVDId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("DVD");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Customer", b =>
+                {
+                    b.Navigation("Rentals");
+                });
+
+            modelBuilder.Entity("DVD_RENTAL_API.Models.DVD", b =>
+                {
+                    b.Navigation("Rentals");
                 });
 #pragma warning restore 612, 618
         }

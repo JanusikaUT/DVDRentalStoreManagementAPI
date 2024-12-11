@@ -13,9 +13,10 @@ namespace DVD_RENTAL_API.Services
             _repository = repository;
         }
 
-        public async Task<IEnumerable<RentalDto>> GetAllAsync()
+        public async Task<List<RentalDto>> GetAllAsync()
         {
             var rentals = await _repository.GetAllAsync();
+            // Convert the result of Select into a List and return it
             return rentals.Select(r => new RentalDto
             {
                 Id = r.Id,
@@ -25,8 +26,10 @@ namespace DVD_RENTAL_API.Services
                 DVDTitle = r.DVD.Title,
                 RentalDate = r.RentalDate,
                 ReturnDate = r.ReturnDate,
-                IsOverdue = r.ReturnDate == null && r.RentalDate.AddDays(7) < DateTime.Now
-            });
+                IsOverdue = r.ReturnDate == null && r.RentalDate.AddDays(7) < DateTime.Now,
+               Status=r.status
+                
+            }).ToList(); // Ensure the result is converted to a List
         }
 
         public async Task<RentalDto> GetByIdAsync(int id)

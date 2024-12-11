@@ -10,5 +10,6 @@
         public DateTime RentalDate { get; set; }
         public DateTime? ReturnDate { get; set; }
         public bool IsOverdue { get; set; }
+        public string Status { get; set; }
     }
 }

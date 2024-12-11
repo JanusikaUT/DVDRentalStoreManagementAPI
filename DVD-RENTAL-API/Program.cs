@@ -15,6 +15,7 @@ namespace DVD_RENTAL_API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.WebHost.UseWebRoot("wwwroot");
 
             // Add services to the container
             ConfigureServices(builder);
@@ -68,8 +69,7 @@ namespace DVD_RENTAL_API
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Dependency Injection for Repositories and Services
-            builder.Services.AddScoped<IDVDRepository, DVDRepository>();
-            builder.Services.AddScoped<IDVDService, DVDService>();
+            
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IAuthService, AuthService>();
@@ -79,6 +79,12 @@ namespace DVD_RENTAL_API
 
             builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
             builder.Services.AddScoped<INotificationService, NotificationService>();
+
+            builder.Services.AddScoped<IRentalRepository, RentalRepository>();
+            builder.Services.AddScoped<IRentalService, RentalService>();
+
+            builder.Services.AddScoped<IManagerRepository, ManagerRepository>();
+            builder.Services.AddScoped<IManagerService, ManagerService>();
         }
 
         private static void ConfigureMiddleware(WebApplication app)
@@ -99,6 +105,8 @@ namespace DVD_RENTAL_API
 
             // Enable Authentication and Authorization
             app.UseAuthentication();
+            app.UseStaticFiles();
+
             app.UseAuthorization();
 
             // Map controllers

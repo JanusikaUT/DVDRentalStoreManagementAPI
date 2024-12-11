@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6d80bbe8-4e33-42b3-b440-503db5174afd.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\6d80bbe8-4e33-42b3-b440-503db5174afd.jpg"
+    },
+    {
+      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6f15696e-7d04-4480-9c94-65b4d4d4df1a.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\6f15696e-7d04-4480-9c94-65b4d4d4df1a.jpg"
+    },
+    {
+      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6f8a4010-5dc1-4d92-8986-d745c65bd398.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\6f8a4010-5dc1-4d92-8986-d745c65bd398.jpg"
+    },
+    {
+      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\ccdd07f7-f7c6-426e-a79a-5388f171c1be.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\ccdd07f7-f7c6-426e-a79a-5388f171c1be.jpg"
+    },
+    {
+      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\ebaba9ad-e059-4033-9859-3a1ca6d9ba86.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\ebaba9ad-e059-4033-9859-3a1ca6d9ba86.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DVD-RENTAL-API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DVD-RENTAL-API.props",
+      "PackagePath": "build\\DVD-RENTAL-API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DVD-RENTAL-API.props",
+      "PackagePath": "buildMultiTargeting\\DVD-RENTAL-API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DVD-RENTAL-API.props",
+      "PackagePath": "buildTransitive\\DVD-RENTAL-API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

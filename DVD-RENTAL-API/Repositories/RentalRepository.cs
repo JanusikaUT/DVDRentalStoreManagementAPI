@@ -13,7 +13,7 @@ namespace DVD_RENTAL_API.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Rental>> GetAllAsync()
+        public async Task<List<Rental>> GetAllAsync()
         {
             return await _context.Rentals
                 .Include(r => r.Customer)

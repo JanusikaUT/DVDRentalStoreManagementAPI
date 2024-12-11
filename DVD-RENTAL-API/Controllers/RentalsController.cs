@@ -20,7 +20,7 @@ namespace DVD_RENTAL_API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RentalDto>>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
             return Ok(await _service.GetAllAsync());
         }

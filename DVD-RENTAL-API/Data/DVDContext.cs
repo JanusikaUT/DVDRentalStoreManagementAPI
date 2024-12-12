@@ -28,6 +28,8 @@ namespace DVD_RENTAL_API.Data
                 .HasOne(n => n.Rental)
                 .WithMany()
                 .HasForeignKey(n => n.RentalId);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -4,6 +4,7 @@ using DVD_RENTAL_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DVD_RENTAL_API.Migrations
 {
     [DbContext(typeof(DVDContext))]
-    partial class DVDContextModelSnapshot : ModelSnapshot
+    [Migration("20241212084034_change")]
+    partial class change
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -204,7 +207,7 @@ namespace DVD_RENTAL_API.Migrations
 
             modelBuilder.Entity("DVD_RENTAL_API.Models.Rental", b =>
                 {
-                    b.HasOne("DVD_RENTAL_API.Models.User", "Customer")
+                    b.HasOne("DVD_RENTAL_API.Models.Customer", "Customer")
                         .WithMany("Rentals")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -221,12 +224,12 @@ namespace DVD_RENTAL_API.Migrations
                     b.Navigation("DVD");
                 });
 
-            modelBuilder.Entity("DVD_RENTAL_API.Models.DVD", b =>
+            modelBuilder.Entity("DVD_RENTAL_API.Models.Customer", b =>
                 {
                     b.Navigation("Rentals");
                 });
 
-            modelBuilder.Entity("DVD_RENTAL_API.Models.User", b =>
+            modelBuilder.Entity("DVD_RENTAL_API.Models.DVD", b =>
                 {
                     b.Navigation("Rentals");
                 });

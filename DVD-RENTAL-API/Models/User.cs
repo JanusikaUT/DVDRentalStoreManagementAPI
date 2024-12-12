@@ -8,6 +8,8 @@
         public string Password { get; set; } // Store hashed passwords
         public string NIC { get; set; }
         public string? Phone { get; set; } // Optional field
-        public string Role { get; set; } // For example, "admin" or "user"
+        public string Role { get; set; } // For example,
+                                         //
+  public ICollection<Rental> Rentals { get; set; }/*"admin" or "user"*/
     }
 }

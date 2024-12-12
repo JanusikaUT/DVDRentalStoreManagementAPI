@@ -38,6 +38,12 @@ namespace DVD_RENTAL_API.Controllers
             }
         }
 
+        [HttpGet("Getalluser")]
+        public async Task<ActionResult<IEnumerable<UserDTO>>> getalluser()
+        {
+            return Ok(await _service.getalluser());
+        }
+
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] CreateCustomerDto dto)
         {

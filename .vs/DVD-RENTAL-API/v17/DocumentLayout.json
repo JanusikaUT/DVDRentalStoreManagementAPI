@@ -1,22 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "X:\\finalpro\\DVDRentalStoreManagementAPI\\",
+  "WorkspaceRootPath": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\finalpro\\dvdrentalstoremanagementapi\\dvd-rental-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\aaaaproject\\dvdrentalstoremanagementapi\\dvd-rental-api\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\finalpro\\dvdrentalstoremanagementapi\\dvd-rental-api\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\aaaaproject\\dvdrentalstoremanagementapi\\dvd-rental-api\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\finalpro\\dvdrentalstoremanagementapi\\dvd-rental-api\\repositories\\managerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\repositories\\managerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\aaaaproject\\dvdrentalstoremanagementapi\\dvd-rental-api\\services\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\services\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\finalpro\\dvdrentalstoremanagementapi\\dvd-rental-api\\services\\managerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\services\\managerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\aaaaproject\\dvdrentalstoremanagementapi\\dvd-rental-api\\repositories\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\repositories\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|x:\\aaaaproject\\dvdrentalstoremanagementapi\\dvd-rental-api\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58F936A8-C980-476C-81D1-669F1BF4336A}|DVD-RENTAL-API\\DVD-RENTAL-API.csproj|solutionrelative:dvd-rental-api\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,61 +30,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ManagerService.cs",
-              "DocumentMoniker": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Services\\ManagerService.cs",
-              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Services\\ManagerService.cs",
-              "ToolTip": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Services\\ManagerService.cs",
-              "RelativeToolTip": "DVD-RENTAL-API\\Services\\ManagerService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Controllers\\CustomersController.cs",
+              "ToolTip": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "DVD-RENTAL-API\\Controllers\\CustomersController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T09:06:19.23Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ManagerRepository.cs",
-              "DocumentMoniker": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Repositories\\ManagerRepository.cs",
-              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Repositories\\ManagerRepository.cs",
-              "ToolTip": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Repositories\\ManagerRepository.cs",
-              "RelativeToolTip": "DVD-RENTAL-API\\Repositories\\ManagerRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T09:06:24.599Z",
+              "WhenOpened": "2024-12-12T11:13:12.749Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ManagerController.cs",
-              "DocumentMoniker": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Controllers\\ManagerController.cs",
-              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Controllers\\ManagerController.cs",
-              "ToolTip": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Controllers\\ManagerController.cs",
-              "RelativeToolTip": "DVD-RENTAL-API\\Controllers\\ManagerController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAIwB0AAAA+AAAA",
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Services\\CustomerService.cs",
+              "ToolTip": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Services\\CustomerService.cs",
+              "RelativeToolTip": "DVD-RENTAL-API\\Services\\CustomerService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T09:06:35.437Z",
+              "WhenOpened": "2024-12-12T11:13:51.767Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Program.cs",
-              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Program.cs",
-              "ToolTip": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Program.cs",
-              "RelativeToolTip": "DVD-RENTAL-API\\Program.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAA9wG0AAAAjAAAA",
+              "DocumentIndex": 3,
+              "Title": "ICustomerRepository.cs",
+              "DocumentMoniker": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Repositories\\ICustomerRepository.cs",
+              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Repositories\\ICustomerRepository.cs",
+              "ToolTip": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Repositories\\ICustomerRepository.cs",
+              "RelativeToolTip": "DVD-RENTAL-API\\Repositories\\ICustomerRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T10:48:41.636Z",
+              "WhenOpened": "2024-12-12T11:24:12.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Repositories\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Repositories\\CustomerRepository.cs",
+              "ToolTip": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Repositories\\CustomerRepository.cs",
+              "RelativeToolTip": "DVD-RENTAL-API\\Repositories\\CustomerRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T11:24:12.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICustomerService.cs",
+              "DocumentMoniker": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Services\\ICustomerService.cs",
+              "RelativeDocumentMoniker": "DVD-RENTAL-API\\Services\\ICustomerService.cs",
+              "ToolTip": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\Services\\ICustomerService.cs",
+              "RelativeToolTip": "DVD-RENTAL-API\\Services\\ICustomerService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T11:17:57.175Z",
               "EditorCaption": ""
             }
           ]

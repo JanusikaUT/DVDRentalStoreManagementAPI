@@ -10,5 +10,6 @@ namespace DVD_RENTAL_API.Services
         Task AddAsync(CreateCustomerDto dto);
         Task UpdateAsync(int id, UpdateCustomerDto dto);
         Task DeleteAsync(int id);
+        Task<IEnumerable<UserDTO>> getalluser();
     }
 }

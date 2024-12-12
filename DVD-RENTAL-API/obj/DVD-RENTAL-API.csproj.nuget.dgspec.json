@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj": {}
+    "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj": {}
   },
   "projects": {
-    "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj": {
+    "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
+        "projectUniqueName": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
         "projectName": "DVD-RENTAL-API",
-        "projectPath": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
+        "projectPath": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\DVD-RENTAL-API.csproj",
         "packagesPath": "C:\\Users\\UT01492\\.nuget\\packages\\",
-        "outputPath": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\obj\\",
+        "outputPath": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\UT01492\\AppData\\Roaming\\NuGet\\NuGet.Config",

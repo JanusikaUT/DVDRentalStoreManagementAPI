@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DVD_RENTAL_API.Migrations
 {
     [DbContext(typeof(DVDContext))]
-    [Migration("20241211090311_change")]
-    partial class change
+    [Migration("20241212085624_changes")]
+    partial class changes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -207,7 +207,7 @@ namespace DVD_RENTAL_API.Migrations
 
             modelBuilder.Entity("DVD_RENTAL_API.Models.Rental", b =>
                 {
-                    b.HasOne("DVD_RENTAL_API.Models.Customer", "Customer")
+                    b.HasOne("DVD_RENTAL_API.Models.User", "Customer")
                         .WithMany("Rentals")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -224,12 +224,12 @@ namespace DVD_RENTAL_API.Migrations
                     b.Navigation("DVD");
                 });
 
-            modelBuilder.Entity("DVD_RENTAL_API.Models.Customer", b =>
+            modelBuilder.Entity("DVD_RENTAL_API.Models.DVD", b =>
                 {
                     b.Navigation("Rentals");
                 });
 
-            modelBuilder.Entity("DVD_RENTAL_API.Models.DVD", b =>
+            modelBuilder.Entity("DVD_RENTAL_API.Models.User", b =>
                 {
                     b.Navigation("Rentals");
                 });

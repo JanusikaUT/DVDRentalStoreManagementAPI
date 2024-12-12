@@ -24,7 +24,7 @@ namespace DVD_RENTAL_API.Models
 
         [MaxLength(250)]
         public string Address { get; set; }
-        public ICollection<Rental> Rentals { get; set; } // Navigation property
+        // Navigation property
     }
 }
 

@@ -30,6 +30,22 @@ namespace DVD_RENTAL_API.Services
             });
         }
 
+        public async Task<IEnumerable<UserDTO>> getalluser()
+        {
+            var users = await _repository.getalluser();
+
+            return users.Select(c => new UserDTO
+            {
+                Name = c.Name,
+                Email = c.Email,
+                Password = c.Password,
+                NIC = c.NIC,
+                Phone = c.Phone,
+                Role = c.Role
+            });
+
+        }
+
         public async Task<CustomerDto> GetByIdAsync(int id)
         {
             var customer = await _repository.GetByIdAsync(id);

@@ -22,7 +22,7 @@ namespace DVD_RENTAL_API.Repositories
             await _context.Users.AddAsync(user);
             return user;
         }
-
+       
         public async Task<bool> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync() > 0;

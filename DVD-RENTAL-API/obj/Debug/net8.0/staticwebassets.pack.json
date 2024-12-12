@@ -1,24 +1,48 @@
 {
   "Files": [
     {
-      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6d80bbe8-4e33-42b3-b440-503db5174afd.jpg",
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\40eb5bde-ef7d-4999-aec1-d902a2542fd5.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\40eb5bde-ef7d-4999-aec1-d902a2542fd5.jpg"
+    },
+    {
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6d80bbe8-4e33-42b3-b440-503db5174afd.jpg",
       "PackagePath": "staticwebassets\\dvdimages\\6d80bbe8-4e33-42b3-b440-503db5174afd.jpg"
     },
     {
-      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6f15696e-7d04-4480-9c94-65b4d4d4df1a.jpg",
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6f15696e-7d04-4480-9c94-65b4d4d4df1a.jpg",
       "PackagePath": "staticwebassets\\dvdimages\\6f15696e-7d04-4480-9c94-65b4d4d4df1a.jpg"
     },
     {
-      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6f8a4010-5dc1-4d92-8986-d745c65bd398.jpg",
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\6f8a4010-5dc1-4d92-8986-d745c65bd398.jpg",
       "PackagePath": "staticwebassets\\dvdimages\\6f8a4010-5dc1-4d92-8986-d745c65bd398.jpg"
     },
     {
-      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\ccdd07f7-f7c6-426e-a79a-5388f171c1be.jpg",
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\84f64cee-4719-4bd9-8403-0b848ecdd82a.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\84f64cee-4719-4bd9-8403-0b848ecdd82a.jpg"
+    },
+    {
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\8d73c2e2-d4da-427d-93f9-a72df13a6666.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\8d73c2e2-d4da-427d-93f9-a72df13a6666.jpg"
+    },
+    {
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\b708a91c-904b-4b51-9a4e-2085104f1604.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\b708a91c-904b-4b51-9a4e-2085104f1604.jpg"
+    },
+    {
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\c9cdc7e5-76bb-4805-b8a1-6ea9f7e73c52.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\c9cdc7e5-76bb-4805-b8a1-6ea9f7e73c52.jpg"
+    },
+    {
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\ccdd07f7-f7c6-426e-a79a-5388f171c1be.jpg",
       "PackagePath": "staticwebassets\\dvdimages\\ccdd07f7-f7c6-426e-a79a-5388f171c1be.jpg"
     },
     {
-      "Id": "X:\\finalpro\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\ebaba9ad-e059-4033-9859-3a1ca6d9ba86.jpg",
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\ebaba9ad-e059-4033-9859-3a1ca6d9ba86.jpg",
       "PackagePath": "staticwebassets\\dvdimages\\ebaba9ad-e059-4033-9859-3a1ca6d9ba86.jpg"
+    },
+    {
+      "Id": "X:\\AAAAPROJECT\\DVDRentalStoreManagementAPI\\DVD-RENTAL-API\\wwwroot\\dvdimages\\f9541e4a-21a3-4acd-ac92-ec7527a1b00c.jpg",
+      "PackagePath": "staticwebassets\\dvdimages\\f9541e4a-21a3-4acd-ac92-ec7527a1b00c.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DVD-RENTAL-API.Microsoft.AspNetCore.StaticWebAssets.props",

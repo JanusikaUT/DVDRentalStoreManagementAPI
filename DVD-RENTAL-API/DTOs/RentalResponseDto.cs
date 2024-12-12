@@ -7,7 +7,7 @@
         public int DVDId { get; set; }
         public DateTime RentalDate { get; set; }
         public DateTime? ReturnDate { get; set; }
-        public bool? Isoverdue { get; set; } = false;
-        public string Status { get; set; } = "Pending";
+        public bool? IsOverdue { get; set; } = false;
+        public string status { get; set; } = "Pending";
     }
 }

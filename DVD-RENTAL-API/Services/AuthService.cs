@@ -74,12 +74,15 @@ namespace DVD_RENTAL_API.Services
         // Method to generate JWT token
         private string GenerateJwtToken(User user)
         {
-            var claims = new[]
+            var claimslist = new List<Claim>();
             {
-            new Claim(ClaimTypes.Name, user.Name),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role)
-        };
+                claimslist.Add(new Claim("Id", user.Id.ToString()));
+                claimslist.Add(new Claim("UserName",user.Name ));
+                claimslist.Add(new Claim("Nic", user.NIC));
+                claimslist.Add(new Claim("Role", user.Role));
+
+
+            };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -87,7 +90,7 @@ namespace DVD_RENTAL_API.Services
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
-                claims: claims,
+                claims: claimslist,
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds
             );

@@ -20,6 +20,11 @@ namespace DVD_RENTAL_API.Repositories
             return await _context.Customers.ToListAsync();
         }
 
+        public async Task<IEnumerable<User>> getalluser()
+        {
+            return await _context.Users.ToListAsync();
+        }
+
         public async Task<Customer> GetByIdAsync(int id)
         {
             var customer = await _context.Customers.FindAsync(id);

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DVD_RENTAL_API.Migrations
 {
     [DbContext(typeof(DVDContext))]
-    [Migration("20241212085624_changes")]
-    partial class changes
+    [Migration("20241212210959_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

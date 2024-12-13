@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DVD_RENTAL_API.Migrations
 {
     /// <inheritdoc />
-    public partial class change : Migration
+    public partial class @new : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -82,15 +82,15 @@ namespace DVD_RENTAL_API.Migrations
                 {
                     table.PrimaryKey("PK_Rentals", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Rentals_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Rentals_DVDs_DVDId",
                         column: x => x.DVDId,
                         principalTable: "DVDs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Rentals_Users_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -136,19 +136,19 @@ namespace DVD_RENTAL_API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Notifications");
+                name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Notifications");
 
             migrationBuilder.DropTable(
                 name: "Rentals");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "DVDs");
 
             migrationBuilder.DropTable(
-                name: "DVDs");
+                name: "Users");
         }
     }
 }

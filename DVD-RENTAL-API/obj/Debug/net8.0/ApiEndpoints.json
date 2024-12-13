@@ -131,16 +131,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DVD_RENTAL_API.Controllers.DVDsController",
-    "Method": "GetAll",
-    "RelativePath": "api/DVDs",
+    "ContainingType": "DVD_RENTAL_API.Controllers.CustomersController",
+    "Method": "getalluser",
+    "RelativePath": "api/Customers/Getalluser",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DVD_RENTAL_API.DTOs.DvdDto, DVD-RENTAL-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DVD_RENTAL_API.DTOs.UserDTO, DVD-RENTAL-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -151,25 +151,9 @@
     ]
   },
   {
-    "ContainingType": "DVD_RENTAL_API.Controllers.DVDsController",
-    "Method": "Create",
-    "RelativePath": "api/DVDs",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "DVD_RENTAL_API.DTOs.CreateDvdDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DVD_RENTAL_API.Controllers.DVDsController",
-    "Method": "GetById",
-    "RelativePath": "api/DVDs/{id}",
+    "ContainingType": "DVD_RENTAL_API.Controllers.ManagerController",
+    "Method": "GetDVDById",
+    "RelativePath": "api/Manager/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -180,22 +164,12 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "DVD_RENTAL_API.DTOs.DvdDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "DVD_RENTAL_API.Controllers.DVDsController",
-    "Method": "Update",
-    "RelativePath": "api/DVDs/{id}",
+    "ContainingType": "DVD_RENTAL_API.Controllers.ManagerController",
+    "Method": "UpdateDVD",
+    "RelativePath": "api/Manager/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -206,17 +180,47 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
-        "Type": "DVD_RENTAL_API.DTOs.UpdateDvdDto",
-        "IsRequired": true
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Director",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Genre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReleaseDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "CopiesAvailable",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DVD_RENTAL_API.Controllers.DVDsController",
-    "Method": "Delete",
-    "RelativePath": "api/DVDs/{id}",
+    "ContainingType": "DVD_RENTAL_API.Controllers.ManagerController",
+    "Method": "DeleteDVD",
+    "RelativePath": "api/Manager/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -227,6 +231,62 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.ManagerController",
+    "Method": "AddDVD",
+    "RelativePath": "api/Manager/AddDVD",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Director",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Genre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReleaseDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "CopiesAvailable",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.ManagerController",
+    "Method": "GetAllDVDs",
+    "RelativePath": "api/Manager/GetAllDVDs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -309,15 +369,31 @@
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
-    "Method": "GetAll",
-    "RelativePath": "api/Rentals",
-    "HttpMethod": "GET",
+    "Method": "AddRental",
+    "RelativePath": "api/Rentals/AddRental",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rentalRequestDto",
+        "Type": "DVD_RENTAL_API.DTOs.RentalRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "CheckAndUpdateOverdueRentals",
+    "RelativePath": "api/Rentals/CheckAndUpdateOverdueRentals",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DVD_RENTAL_API.DTOs.RentalDto, DVD-RENTAL-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -329,24 +405,48 @@
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
-    "Method": "Create",
-    "RelativePath": "api/Rentals",
-    "HttpMethod": "POST",
+    "Method": "GetCountOfAcceptedRentals",
+    "RelativePath": "api/Rentals/CountAcceptedRentals",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "DVD_RENTAL_API.DTOs.CreateRentalDto",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
-    "Method": "GetById",
-    "RelativePath": "api/Rentals/{id}",
+    "Method": "GetCountOfRejectedRentals",
+    "RelativePath": "api/Rentals/CountRejectedRentals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "GetCountOfReturnedRentals",
+    "RelativePath": "api/Rentals/CountReturnedRentals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "GetAllRentals",
+    "RelativePath": "api/Rentals/GetAllRental",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "GetAllRentalByCustomerId",
+    "RelativePath": "api/Rentals/GetAllRentalByCustomerId/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -357,28 +457,82 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "DVD_RENTAL_API.DTOs.RentalDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
-    "Method": "Delete",
-    "RelativePath": "api/Rentals/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "GetRenatlById",
+    "RelativePath": "api/Rentals/GetRentalById",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "GetRentalsByCustomer",
+    "RelativePath": "api/Rentals/GetRentalsByCustomer/{customerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "RejectRental",
+    "RelativePath": "api/Rentals/RejectRental/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "RentalUpdate",
+    "RelativePath": "api/Rentals/RentalAccept/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DVD_RENTAL_API.Controllers.RentalsController",
+    "Method": "ReturnRental",
+    "RelativePath": "api/Rentals/ReturnRental/{rentalId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rentalId",
         "Type": "System.Int32",
         "IsRequired": true
       }
